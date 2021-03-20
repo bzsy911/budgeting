@@ -12,10 +12,10 @@ class BurnChart(CitiBudgeting):
         self.name = 'burn chart'
         self.app = BurnChartCollector(self.excel, burn_chart_tab, bill_tab,
                                       date.today() + timedelta(days=4-date.today().weekday(), weeks=week))
-        self.function = self._weekly_chart
+        self.module = self._weekly_chart
 
     def run_report(self, save=True):
-        super().run_report_excel(self.function, save)
+        super().run_report_excel(self.module, save)
 
     # ---------- App Functions ----------
     def _weekly_chart(self):
@@ -55,6 +55,5 @@ class BurnChart(CitiBudgeting):
 
 
 if __name__ == "__main__":
-    jie = BurnChart('Budget Tracker 0727.xlsx')
-    jie.run_report()
+    pass
 

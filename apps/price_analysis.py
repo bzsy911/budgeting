@@ -12,12 +12,12 @@ class PricingAnalysis(CitiBudgeting):
         self.name = 'pricing analysis'
         self.tab_1 = PricingAnalysisCollector(self.excel, tab_1)
         self.tab_2 = PricingAnalysisCollector(self.excel, tab_2)
-        self.functions = [self._total_impact,
-                          self._change_log,
-                          self._impact_by_activity_code]
+        self.modules = [self._total_impact,
+                        self._change_log,
+                        self._impact_by_activity_code]
 
     def run_report(self, save=True):
-        super().run_report_txt(self.functions, save)
+        super().run_report_txt(self.modules, save)
 
     # ---------- App Functions ----------
     def _total_impact(self):
@@ -133,5 +133,4 @@ class PricingAnalysis(CitiBudgeting):
 
 
 if __name__ == "__main__":
-    jie = PricingAnalysis('Budget Tracker 0727.xlsx')
-    jie.run_report()
+    pass
